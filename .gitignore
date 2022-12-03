@@ -1,0 +1,9 @@
+__pycache__/
+.venv
+*.pyc
+db.sqlite3
+.vscode
+*.code-workspace
+dev
+todo.notes
+static

@@ -1,0 +1,36 @@
+# https://github.com/paperless-ngx/paperless-ngx/blob/main/.pre-commit-config.yaml
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.2.0
+    hooks:
+      - id: check-docstring-first
+      - id: check-json
+        exclude: "tsconfig.*json"
+      - id: check-yaml
+      - id: check-toml
+      - id: check-executables-have-shebangs
+      - id: end-of-file-fixer
+        exclude_types:
+          - svg
+          - pofile
+        exclude: "(^LICENSE$)"
+      - id: mixed-line-ending
+        args:
+          - "--fix=lf"
+      - id: trailing-whitespace
+        exclude_types:
+          - svg
+      - id: check-case-conflict
+      - id: detect-private-key
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+  # -   repo: https://gitlab.com/pycqa/flake8
+  #     rev: 3.9.2
+  #     hooks:
+  #     -  id: flake8
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort

@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "8f3e0877-dfc1-4df0-bed4-a308fb0deb22",
+		"name": "SSLex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20559422"
+	},
+	"item": [
+		{
+			"name": "Check SSL Expiry date - not expired",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domain_name\": \"medium.com\",\r\n    \"user_timezone\": \"Asia/Calcutta\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/domain/expiry_date/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"domain",
+						"expiry_date",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check SSL Expiry date - expired",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domain_name\": \"https://expired.badssl.com/\",\r\n    \"user_timezone\": \"Asia/Calcutta\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/domain/expiry_date/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"domain",
+						"expiry_date",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create reminder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domain_name\": \"google.com\",\r\n    \"timezone_name\": \"Asia/Calcutta\",\r\n    \"email\": \"a@example.com\",\r\n    \"reminder_dates\": [\r\n        \"2022-10-30\",\r\n        \"2022-10-10\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/reminder/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"reminder",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete reminder",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domain_name\":\"mykinderpass.com\",\r\n    \"timezone_name\":\"Asia/Calcutta\",\r\n    \"email\":\"jagatheeshthangaraj@gmail.com\",\r\n    \"reminder_dates\":[\"2022-08-30\",\"2022-08-10\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/reminder/a5b0de37-3d2f-4e8e-9c35-8adb7ea5d86e/19/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"reminder",
+						"a5b0de37-3d2f-4e8e-9c35-8adb7ea5d86e",
+						"19",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete reminder - no reminder id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domain_name\":\"mykinderpass.com\",\r\n    \"timezone_name\":\"Asia/Calcutta\",\r\n    \"email\":\"jagatheeshthangaraj@gmail.com\",\r\n    \"reminder_dates\":[\"2022-08-30\",\"2022-08-10\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/reminder/a5b0de37-3d2f-4e8e-9c35-8adb7ea5d86e/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"reminder",
+						"a5b0de37-3d2f-4e8e-9c35-8adb7ea5d86e",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete reminder - no account id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domain_name\":\"mykinderpass.com\",\r\n    \"timezone_name\":\"Asia/Calcutta\",\r\n    \"email\":\"jagatheeshthangaraj@gmail.com\",\r\n    \"reminder_dates\":[\"2022-08-30\",\"2022-08-10\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/reminder/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"reminder",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domain_name\":\"mykinderpass.com\",\r\n    \"timezone_name\":\"Asia/Calcutta\",\r\n    \"email\":\"jagatheeshthangaraj@gmail.com\",\r\n    \"reminder_dates\":[\"2022-08-30\",\"2022-08-10\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/account/a5b0de37-3d2f-4e8e-9c35-8adb7ea5d86e/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"account",
+						"a5b0de37-3d2f-4e8e-9c35-8adb7ea5d86e",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete account - no account id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domain_name\":\"mykinderpass.com\",\r\n    \"timezone_name\":\"Asia/Calcutta\",\r\n    \"email\":\"jagatheeshthangaraj@gmail.com\",\r\n    \"reminder_dates\":[\"2022-08-30\",\"2022-08-10\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/account/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"account",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}

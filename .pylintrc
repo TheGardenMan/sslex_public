@@ -1,0 +1,13 @@
+[MASTER]
+; to avoid no-member warning in model_name.objects._...
+load-plugins=pylint_django
+
+[FORMAT]
+max-line-length=79
+
+[MESSAGES CONTROL]
+; unpacking-non-sequence is buggy in pylint: https://github.com/PyCQA/pylint/issues/5288
+disable= unused-variable, missing-module-docstring, missing-class-docstring, unused-import, unpacking-non-sequence, too-many-function-args, missing-function-docstring, raise-missing-from,useless-super-delegation,line-too-long,fixme
+
+[TYPECHECK]
+ignored-classes = TimeZone

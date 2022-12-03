@@ -1,0 +1,11 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/SSLex
+ExecStart=/usr/bin/gunicorn --access-logfile - --workers 3 --bind 127.0.0.1:8000 SSLex.wsgi:application
+[Install]
+WantedBy=multi-user.target
