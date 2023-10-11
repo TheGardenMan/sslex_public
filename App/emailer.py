@@ -63,6 +63,7 @@ def send_reminder(domain_obj: Domain, reminder_obj: Reminder):
 
 
 def send_welcome_email(email: str, domain_obj: Domain):
+    print("welcome email sent")
     reminders: QuerySet = domain_obj.reminders.all()
     email_content = "You will receive reminders in following times.\n"
     domain_name: str = domain_obj.domain_name

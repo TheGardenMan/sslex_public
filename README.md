@@ -4,7 +4,8 @@ A simple site to check SSL expiry date and set email reminders.
 
 Uses Huey queue for sending email reminders.
 
-Run the Huey consumer using `App\consumer.py`.
+Run the Huey consumer  `python manage.py run_huey` and run the server 
+`python manage.py runserver`
 
 Email client and front-end has not been implemented yet.
 
